@@ -236,7 +236,7 @@ class LangChainServer:
             {'role': 'system', 'content': system_message},
             {'role': 'user', 'content': user_message}
         ]
-        evaluation_response = self.get_completion_from_messages(messages)
+        evaluation_response = self.get_completion_from_messages(messages, max_tokens=1)
         if debug: print("Step 6: Model evaluated the response.")
 
         # Step 7: If yes, use this answer; if not, say that you will connect the user to a human
